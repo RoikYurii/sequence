@@ -49,17 +49,21 @@ function sequence(start, step) {
     numbers.push(start);
   };
 
-  take(gen, 5);
-  console.log(numbers);
-};
-
-function take(gen, x) {
-  for (var i = 0; i < x; i++) {
-    gen();
+  function take(gen, x) {
+    for (var i = 0; i < x; i++) {
+      gen();
+    };
+    return numbers
   };
+
+  take(gen, 5);
+  return numbers
 };
 
-sequence(5,10);
+
+console.log(sequence(5,10));
+
+
 
 
 
